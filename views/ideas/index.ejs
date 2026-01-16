@@ -1,0 +1,10 @@
+<h1>Ideas page is rendering </h1>
+
+
+<ul>
+  <% ideas.forEach(idea => { %>
+    <li>
+      <strong><%= idea.title %></strong> — <%= idea.description %>
+    </li>
+  <% }) %>
+</ul>
