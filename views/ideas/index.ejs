@@ -1,10 +1,20 @@
 <h1>Ideas page is rendering </h1>
 
+<a href="/ideas/new">➕ Add New Idea</a>
+
+
 
 <ul>
   <% ideas.forEach(idea => { %>
-    <li>
-      <strong><%= idea.title %></strong> — <%= idea.description %>
-    </li>
+  <li>
+  <strong><%= idea.title %></strong> — <%= idea.description %>
+
+ <form action="/ideas/<%= idea._id %>?_method=DELETE" method="POST" style="display:inline;">
+  <button type="submit">Delete</button>
+</form>
+
+<a href="/ideas/<%= idea._id %>/edit">Edit</a>
+
+
   <% }) %>
 </ul>

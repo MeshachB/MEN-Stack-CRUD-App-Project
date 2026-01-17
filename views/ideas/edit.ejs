@@ -1,0 +1,16 @@
+<h1>Edit Idea</h1>
+
+<form action="/ideas/<%= idea._id %>?_method=PUT" method="POST">
+  <label>Title</label><br>
+  <input type="text" name="title" value="<%= idea.title %>"><br><br>
+
+  <label>Description</label><br>
+  <textarea name="description"><%= idea.description %></textarea><br><br>
+
+  <button type="submit">Update Idea</button>
+</form>
+
+<a href="/ideas">Back</a> 
+
+<form action="/ideas/<%= idea._id %>?_method=PUT" method="POST">
+
