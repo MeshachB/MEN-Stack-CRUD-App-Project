@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const ideaRoutes = require('./routes/ideas');
+const authRoutes = require('./routes/auth');
 
 
 const app = express(); 
@@ -13,13 +14,15 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 console.log('Ideas routes mounted');
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(morgan('dev'));
-app.use(express.static('public')); 
+
+app.use(express.static('public'));
+
+app.use('/', authRoutes);
 app.use('/ideas', ideaRoutes);
+
 
 
 
@@ -37,6 +40,15 @@ mongoose.connection.on('error', (err) => {
 app.get('/', (req, res) => {
   res.render('home');
 });
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
 
 
 const PORT = process.env.PORT || 3000;
