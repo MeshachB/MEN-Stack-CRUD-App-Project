@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const ideaRoutes = require('./routes/ideas');
 const authRoutes = require('./routes/auth');
+const session = require('express-session');
 
 
 const app = express(); 
@@ -17,6 +18,14 @@ console.log('Ideas routes mounted');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+
+app.use(
+  session({
+    secret: 'supersecretkey',
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 app.use(express.static('public'));
 

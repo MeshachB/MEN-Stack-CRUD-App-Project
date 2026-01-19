@@ -1,13 +1,13 @@
 <h1>Login</h1>
 
-<form>
+<form action="/login" method="POST">
   <label>Email</label>
-  <input type="email" />
+  <input type="email" name="email" required />
 
   <label>Password</label>
-  <input type="password" />
+  <input type="password" name="password" required />
 
-  <button>Login</button>
+  <button type="submit">Login</button>
 </form>
 
-<a href="/">Back</a>
+<a href="/register">Create account</a>
