@@ -3,22 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ideas</title>
-
-  <!-- Global styles -->
   <link rel="stylesheet" href="/styles.css">
 </head>
+
+
 <body>
+<header class="game-header">
+  <div class="screen">
+    <span class="logo">EARTHFORGE v1.0</span>
+    <span class="status">● ONLINE</span>
+  </div>
+  <div class="auth-controls">
+  <% if (user) { %>
+    <span class="user">Trainer: <%= user.email %></span>
+   <a href="/logout" class="btn">Logout</a>
+  <% } else { %>
+    <a href="/auth/login" class="btn">Login</a>
+    <a href="/auth/register" class="btn">Sign Up</a>
+  <% } %>
+</div>
+
+<div class="pixel-divider"></div>
+
+
+</header>
 
   <div class="container">
     <h1>Ideas</h1>
 
-    <a href="/ideas/new" class="add-link">+ Add New Idea</a>
+    <a href="/ideas/new">+ Add New Idea</a>
 
     <ul class="idea-list">
       <% ideas.forEach(idea => { %>
         <li class="idea-item">
-          <strong><%= idea.title %></strong>
-          — <%= idea.description %>
+
+          <!-- CLICK TO VIEW -->
+          <a class="idea-title" href="/ideas/<%= idea._id %>">
+            <strong><%= idea.title %></strong>
+          </a>
+
+          <p class="idea-description"><%= idea.description %></p>
 
           <div class="idea-actions">
             <form
@@ -31,6 +55,7 @@
 
             <a href="/ideas/<%= idea._id %>/edit">Edit</a>
           </div>
+
         </li>
       <% }) %>
     </ul>

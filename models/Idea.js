@@ -6,6 +6,7 @@ const ideaSchema = new mongoose.Schema({
     required: true,
   },
   description: String,
+  image: String,
 });
 
 module.exports = mongoose.model('Idea', ideaSchema);

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= idea.title %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="app-bg">
+
+  <div class="container idea-show">
+
+    <!-- FLEX WRAPPER -->
+    <div class="idea-layout">
+
+      <!-- LEFT SIDE: TEXT + FORM -->
+      <div class="idea-content">
+        <h1 class="idea-title"><%= idea.title %></h1>
+
+        <p class="idea-description">
+          <%= idea.description %>
+        </p>
+
+        <!-- IMAGE UPLOAD (SHOW PAGE ONLY) -->
+        <form 
+          action="/ideas/<%= idea._id %>/image" 
+          method="POST" 
+          enctype="multipart/form-data"
+          class="upload-form"
+        >
+          <input type="file" name="image" required />
+          <button type="submit">Upload Image</button>
+        </form>
+
+        <a href="/ideas" class="back-link">← Back to Ideas</a>
+      </div>
+
+      <!-- RIGHT SIDE: IMAGE -->
+      <% if (idea.image) { %>
+        <div class="idea-image-wrapper">
+          <img 
+            src="/uploads/<%= idea.image %>" 
+            alt="Idea image"
+            class="idea-image"
+          >
+        </div>
+      <% } %>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

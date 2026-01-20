@@ -29,9 +29,13 @@ app.use(
 
 app.use(express.static('public'));
 
+app.use((req, res, next) => {
+  res.locals.user = req.session.user || null;
+  next();
+});
+
 app.use('/', authRoutes);
 app.use('/ideas', ideaRoutes);
-
 
 
 

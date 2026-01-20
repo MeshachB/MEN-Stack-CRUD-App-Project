@@ -1,17 +1,17 @@
-<h1>Edit Idea</h1>
+<<link rel="stylesheet" href="/styles.css">
 
-<form action="/ideas/<%= idea._id %>?_method=PUT" method="POST">
-  <label>Title</label><br>
-  <input type="text" name="title" value="<%= idea.title %>"><br><br>
+<div class="container">
+  <h1>Edit Idea</h1>
 
-  <label>Description</label><br>
-  <textarea name="description"><%= idea.description %></textarea><br><br>
+  <form action="/ideas/<%= idea._id %>?_method=PUT" method="POST">
+    <label>Title</label>
+    <input type="text" name="title" value="<%= idea.title %>" required>
 
-  <button type="submit">Update Idea</button>
-</form>
+    <label>Description</label>
+    <textarea name="description" required><%= idea.description %></textarea>
 
-<a href="/ideas">Back</a> 
+    <button type="submit">Update Idea</button>
+  </form>
 
-<form action="/ideas/<%= idea._id %>?_method=PUT" method="POST">
-
-<link rel="stylesheet" href="/styles.css">
+  <a href="/ideas" class="back-link">← Back to Ideas</a>
+</div>
