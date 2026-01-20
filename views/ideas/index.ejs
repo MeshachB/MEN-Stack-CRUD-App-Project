@@ -1,20 +1,40 @@
-<h1>Ideas page is rendering </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ideas</title>
 
-<a href="/ideas/new">➕ Add New Idea</a>
+  <!-- Global styles -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
 
+  <div class="container">
+    <h1>Ideas</h1>
 
+    <a href="/ideas/new" class="add-link">+ Add New Idea</a>
 
-<ul>
-  <% ideas.forEach(idea => { %>
-  <li>
-  <strong><%= idea.title %></strong> — <%= idea.description %>
+    <ul class="idea-list">
+      <% ideas.forEach(idea => { %>
+        <li class="idea-item">
+          <strong><%= idea.title %></strong>
+          — <%= idea.description %>
 
- <form action="/ideas/<%= idea._id %>?_method=DELETE" method="POST" style="display:inline;">
-  <button type="submit">Delete</button>
-</form>
+          <div class="idea-actions">
+            <form
+              action="/ideas/<%= idea._id %>?_method=DELETE"
+              method="POST"
+              style="display:inline;"
+            >
+              <button type="submit">Delete</button>
+            </form>
 
-<a href="/ideas/<%= idea._id %>/edit">Edit</a>
+            <a href="/ideas/<%= idea._id %>/edit">Edit</a>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
 
-
-  <% }) %>
-</ul>
+</body>
+</html>

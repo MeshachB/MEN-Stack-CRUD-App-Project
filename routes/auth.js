@@ -45,13 +45,18 @@ router.post('/login', async (req, res) => {
       return res.send('Invalid credentials');
     }
 
-    req.session.userId = user._id;
+    // essential key line 
+    req.session.user = user._id;
+
+    // Redirect AFTER successful login
     res.redirect('/ideas');
   } catch (err) {
     console.error('LOGIN ERROR:', err);
     res.status(500).send('Login failed');
   }
 });
+
+
 
 
 module.exports = router;

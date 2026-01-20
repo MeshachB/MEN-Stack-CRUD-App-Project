@@ -1,0 +1,99 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GLOBAL */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* PAGE CONTAINER */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 6px;
+}
+
+/* HEADINGS */
+h1, h2 {
+  margin-bottom: 16px;
+}
+
+
+
+/* FORMS */
+form {
+  margin-top: 16px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* BUTTONS */
+button {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+/* LINKS */
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* IDEA LIST */
+ul {
+  list-style: none;
+  margin-top: 16px;
+}
+
+li {
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+
+/* ACTION LINKS */
+.actions {
+  margin-top: 8px;
+}
+
+.actions a,
+.actions button {
+  margin-right: 8px;
+}
