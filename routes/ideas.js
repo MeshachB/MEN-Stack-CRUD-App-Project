@@ -5,7 +5,16 @@ const router = express.Router();
 
 const Idea = require('../models/Idea');
 
-router.get('/', async (req, res) => {
+function isLoggedIn(req, res, next) {
+  if (!req.session.user) {
+    return res.redirect('/login');
+  }
+  next();
+}
+
+
+
+router.get('/', isLoggedIn, async (req, res) => {
   try {
     const ideas = await Idea.find({});
     res.render('ideas/index', { ideas });
