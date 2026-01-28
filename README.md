@@ -3,8 +3,7 @@
 EarthForge is a full-stack MEN application that allows users to store ,build, refine, and track sustainable ideas. The app demonstrates full CRUD functionality, authentication, session management, and deployment to a production environment.
 
 ##  Live Demo
-https://lit-ravine-01554.herokuapp.com/
-
+https://lit-ravine-01554-a61c05b57e7a.herokuapp.com/login
 ## Technologies Used
 - Node.js
 - Express
